@@ -13,7 +13,6 @@ function request_post(detail_dir){
         //     console.log(item);
         //     result.append(item);
         // }(element=>{
-            
         //     console.log(item);
         //     result.append(item);
         // });
