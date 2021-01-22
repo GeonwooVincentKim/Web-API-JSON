@@ -1,0 +1,21 @@
+html, body{
+    padding: 0;
+    margin: 0 auto;
+}
+.page-header{
+    background-color: #ff9400;
+    padding: 20px 20px 20px 40px;
+}
+.page-header h1, .page-header h1 a {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+.content{
+    margin-top: 20px;
+    margin-left: 40px;
+}
+h1, h2, h3, h4{
+    font-family: 'Lobster', cursive;
+}
+
