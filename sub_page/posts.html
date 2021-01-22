@@ -6,7 +6,7 @@
     <title>Posts</title>
 
     <link rel="stylesheet" href="/css/index.css">
-    <script src="/js/index.js" type="text/javascript">request();</script>
+    <script src="/js/sub_page/posts.js" type="text/javascript">request();</script>
 </head>
 <body>
     <div class="page-header">
@@ -23,13 +23,13 @@
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
-                <button onclick="request_detail('https://jsonplaceholder.typicode.com/posts/1')">Request Data</button>
+                <!-- <button onclick="request_detail('https://jsonplaceholder.typicode.com/posts/1')">Request Data</button>
                 <button onclick="request()">Request Data</button>
                 <button onclick="request()">Request Data</button>
-                <button onclick="request()">Request Data</button>
+                <button onclick="request()">Request Data</button> -->
                 <p id="result">
                     <script type="text/javascript">
-                        request_all("posts");
+                        request_post("posts");
                     </script>
                 </p>
             </div>
