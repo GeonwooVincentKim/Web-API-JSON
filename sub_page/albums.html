@@ -23,13 +23,11 @@
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
-                <button onclick="request()">Request Data</button>
-                <button onclick="request()">Request Data</button>
-                <button onclick="request()">Request Data</button>
-                <button onclick="request()">Request Data</button>
-                <script type="text/javascript">
-                    request();
-                </script>
+                <p id="result">
+                    <script type="text/javascript">
+                        request_all("posts");
+                    </script>
+                </p>
             </div>
         </div>
     </div>

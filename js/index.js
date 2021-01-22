@@ -26,7 +26,7 @@ function request_detail(dummy_dir){
     })
 }
 
-function test_request(detail_dir){
+function request_all(detail_dir){
     console.log("Testing..");
     fetch("https://jsonplaceholder.typicode.com/" + detail_dir)
     .then(function(response){
