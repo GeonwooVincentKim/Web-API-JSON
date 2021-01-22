@@ -6,6 +6,9 @@
     <title>Web-API-Test</title>
 
     <link rel="stylesheet" href="css/index.css">
+    <script src="/js/index.js">
+        request()
+    </script>
 </head>
 <body>
     <div class="page-header">
@@ -13,8 +16,9 @@
         <a href="/sub_page/posts.html" class="top-menu">
             <!-- Defines the area of the text(button-area) in terms of sentences(button) -->
             <span class="menu_list">
-                <button onclick="movePage('', '')" class="btn-posts">
+                <button onclick="request()" class="btn-posts">
                     Move to Post Page
+                    console.log(handleRequest);
                 </button>
                 <!-- Move to Post Page -->
             </span>

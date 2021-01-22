@@ -5,6 +5,11 @@ var movePage = function onClick(pg_dir){
     history.forward();
 }
 
-var handleRequest = function request(){
-    alert("Test");
+function request(){
+    fetch("https://jsonplaceholder.typicode.com/todos/1")
+    .then(function(response){
+        return response.json()
+    }).then((response) => {
+        console.log(response);
+    })
 }
