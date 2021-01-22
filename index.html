@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="css/index.css">
     <script src="/js/index.js">
-        request()
+        request();
     </script>
 </head>
 <body>
@@ -16,14 +16,13 @@
         <a href="/sub_page/posts.html" class="top-menu">
             <!-- Defines the area of the text(button-area) in terms of sentences(button) -->
             <span class="menu_list">
-                <button onclick="request()" class="btn-posts">
+                <button onclick="" class="btn-posts">
                     Move to Post Page
-                    console.log(handleRequest);
                 </button>
                 <!-- Move to Post Page -->
             </span>
         </a>
-        
+
         <a href="/sub_page/comments.html" class="top-menu">
             <span class="menu_list">
                 <button onclick="" class="btn-comments">
@@ -31,7 +30,7 @@
                 </button>
             </span>
         </a>
-        
+
         <a href="/sub_page/albums.html" class="top-menu">
             <span class="menu_list">
                 <button onclick="" class="btn-albumns">
@@ -39,7 +38,7 @@
                 </button>
             </span>
         </a>
-        
+
         <a href="/sub_page/photos.html" class="top-menu">
             <span class="menu_list">
                 <button onclick="" class="btn-photos">
@@ -47,7 +46,7 @@
                 </button>
             </span>
         </a>
-        
+
         <a href="/sub_page/todos.html" class="top-menu">
             <span class="menu_list">
                 <button onclick="" class="btn-todos">
@@ -55,7 +54,7 @@
                 </button>
             </span>
         </a>
-        
+
         <a href="/sub_page/users.html" class="top-menu">
             <span class="menu_list">
                 <button onclick="" class="btn-todos">
@@ -64,15 +63,15 @@
             </span>
         </a>
     </div>
-   <div class="content container">
-       <div class="row">
-           <div class="col-md-8">
-              <a href="#">Testing..1</a>
-              <a href="#">Testing..2</a>
-              <a href="#">Testing..3</a>
-              <a href="#">Testing..4</a>
-           </div>
-       </div>
-   </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                <a href="#" onclick="request('https://jsonplaceholder.typicode.com/posts');">All Posts</a>
+                <a href="#">All Comments</a>
+                <a href="#">All Albums</a>
+                <a href="#">All Photos</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

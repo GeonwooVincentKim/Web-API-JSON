@@ -6,7 +6,7 @@
     <title>Posts</title>
 
     <link rel="stylesheet" href="/css/index.css">
-    <script src="/js/index.js"></script>
+    <script src="/js/index.js" type="text/javascript">request();</script>
 </head>
 <body>
     <div class="page-header">
@@ -23,10 +23,13 @@
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
-               <button onclick="request()">Request Data</button>
-               <button onclick="request()">Request Data</button>
-               <button onclick="request()">Request Data</button>
-               <button onclick="request()">Request Data</button>
+                <button onclick="request()">Request Data</button>
+                <button onclick="request()">Request Data</button>
+                <button onclick="request()">Request Data</button>
+                <button onclick="request()">Request Data</button>
+                <script type="text/javascript">
+                    request();
+                </script>
             </div>
         </div>
     </div>
