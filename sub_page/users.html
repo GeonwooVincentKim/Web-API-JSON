@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/sub_page/users.js"></script>
+</head>
+<body>
+    <div class="page-header">
+        <h1><a href="/">Users Page</a></h1>
+        <a href="/index.html" class="top-menu">
+            <!-- Defines the area of the text(button-area) in terms of sentences(button) -->
+            <span class="menu_list">
+                <button onclick="" class="btn-posts">
+                    Move to Home-Page
+                </button>
+            </span>
+        </a>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                <!-- <a href="/sub_page/users.html/1" id="result"> -->
+                <a href="javascript:request_user_detail('https://jsonplaceholder.typicode.com/users/{%users.id%}')" id="result">
+                    <script type="text/javascript">
+                        request_user("users");
+                    </script>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web-API-Test</title>
+
+    <link rel="stylesheet" href="css/index.css">
+    <script src="/js/index.js">
+        request();
+    </script>
+</head>
+<body>
+    <div class="page-header">
+        <h1><a href="/">Web API Testing..</a></h1>
+        <a href="/sub_page/posts.html" class="top-menu">
+            <!-- Defines the area of the text(button-area) in terms of sentences(button) -->
+            <span class="menu_list">
+                <button onclick="" class="btn-posts">
+                    Move to Post Page
+                </button>
+                <!-- Move to Post Page -->
+            </span>
+        </a>
+
+        <a href="/sub_page/comments.html" class="top-menu">
+            <span class="menu_list">
+                <button onclick="" class="btn-comments">
+                    Move to comment Page
+                </button>
+            </span>
+        </a>
+
+        <a href="/sub_page/albums.html" class="top-menu">
+            <span class="menu_list">
+                <button onclick="" class="btn-albumns">
+                    Move to Albums Page
+                </button>
+            </span>
+        </a>
+
+        <a href="/sub_page/photos.html" class="top-menu">
+            <span class="menu_list">
+                <button onclick="" class="btn-photos">
+                    Move to Photos Page
+                </button>
+            </span>
+        </a>
+
+        <a href="/sub_page/todos.html" class="top-menu">
+            <span class="menu_list">
+                <button onclick="" class="btn-todos">
+                    Move to Todos Page
+                </button>
+            </span>
+        </a>
+
+        <a href="./sub_page/users.html" class="top-menu">
+            <span class="menu_list">
+                <button onclick="" class="btn-todos">
+                    Move to Users Page
+                </button>
+            </span>
+        </a>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                <a href="#" onclick="request_all('posts')" id="result">All Posts</a>
+                <!-- <a href="#" onclick="request('https://jsonplaceholder.typicode.com/posts');">All Posts</a>
+                <a href="#" onclick="request('https://jsonplaceholder.typicode.com/comments');">All Comments</a>
+                <a href="#" onclick="request('https://jsonplaceholder.typicode.com/albums');">All Albums</a>
+                <a href="#" onclick="request('https://jsonplaceholder.typicode.com/photos');">All Photos</a> -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

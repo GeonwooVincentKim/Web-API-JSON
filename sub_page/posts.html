@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/sub_page/posts.js" type="text/javascript">request();</script>
+</head>
+<body>
+    <div class="page-header">
+        <h1><a href="/">Posts Page</a></h1>
+        <a href="/index.html" class="top-menu">
+            <!-- Defines the area of the text(button-area) in terms of sentences(button) -->
+            <span class="menu_list">
+                <button onclick="" class="btn-posts">
+                    Move to Home-Page
+                </button>
+            </span>
+        </a>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                <!-- <button onclick="request_detail('https://jsonplaceholder.typicode.com/posts/1')">Request Data</button>
+                <button onclick="request()">Request Data</button>
+                <button onclick="request()">Request Data</button>
+                <button onclick="request()">Request Data</button> -->
+                <p id="result">
+                    <script type="text/javascript">
+                        request_post("posts");
+                    </script>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
