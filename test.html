@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Table Program</title>
+</head>
+<body>
+<input type="text" id="table" placeholder="Enter table"/>
+<input type="button" value="Submit" onClick="table()"/>
+<p id="demo"></p>
+<!----------------------------------------------------------------------------------------------->
+<script type="text/javascript">
+function table()
+{
+    var value = document.getElementById("table").value;
+    var demop = document.getElementById("demo");
+    var a;
+    for(a=1; a <= 10;++a)
+    {
+        demop.innerHTML=(value+"*"+ a +"="+ value*a);
+    }
+    }
+</script>
+</body>
+</html>

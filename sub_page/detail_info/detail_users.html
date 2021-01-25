@@ -23,12 +23,12 @@
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
-                <a id="resultDetail">
+                <a id="resultDetail" href="{$pk=request_user_detail('id')}">
                 <!-- <a id="resultDetail" onclick="request_user_detail('result.id')"> -->
                 <!-- <a id="resultDetail" onclick="request_user_detail('result.id')"> -->
                 <!-- <a href="javascript:request_user_detail('^(?!0|1$)\d{1,4}$')" id="resultDetail"> -->
-                    <script type="text/javascript">
-                        request_user_detail('');
+                    <script type="text/javascript" id="num">
+                        request_user_detail('1');
                         /* request_user_detail("1"); */
                     </script>
                 </a>

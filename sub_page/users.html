@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="/css/index.css">
     <script src="/js/sub_page/users.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 </head>
 <body>
     <div class="page-header">
@@ -23,13 +24,33 @@
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
-                <a id="result" href="/sub_page/detail_info/detail_users.html">
+                <!-- <ul id="result" href="/sub_page/detail_info/detail_users.html"> -->
                 <!-- <a href="/sub_page/detail_info/detail_users.html/" id="result"> -->
                 <!-- <a href="/sub_page/users.html/1" id="result"> -->
                 <!-- <a href="javascript:request_user_detail('https://jsonplaceholder.typicode.com/users/{%users.id%}')" id="result"> -->
+                <a href="/sub_page/detail_info/detail_users.html" id="result">
                     <script type="text/javascript">
-                        /* request_user_detail("#resultDetail"); */
+                        // request_user_detail("3");
                         request_user("users");
+                        /* var list = request_user("users"); */
+                       /* var list = document.getElementById("result");
+                        for(i = 0; i <= list.length; i++){
+                            list.innerHTML =
+                            "<li>"
+                                "<a href='/sub_page/detail_info/detail_users.html/'>"
+                                    "ID: " + list[i].id + " Name: " + list[i].name + " User-Name: " + list[i].username
+                                    " Email: " + list[i].email + " Phone: " + list[i].phone + " Website: " + list[i].website + "<br>"
+                                "</a>"
+                            "</li>"
+                        }
+                        console.log(list);*/
+                        /*for(i = 0; i <= list.length; i++){
+                            document.write("<li>");
+                            document.write("<a href='/sub_page/detail_info/detail_users.html'>");
+                            document.write("ID: " + list[i].id + " Name: " + list[i].name + " User-Name: " + list[i].username + " Email: " + list[i].email + " Phone: " + list[i].phone + " Website: " + list[i].website + "<br>");
+                            document.write("</a>");
+                            document.write("</li>");
+                        }*/
                     </script>
                 </a>
             </div>
