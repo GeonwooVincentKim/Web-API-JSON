@@ -26,11 +26,14 @@ function request_user_detail(detail_num){
     .then(function(response){
         return response.json()
     }).then((response) => {
-        var result = request_user(detail_num)
+        console.log(response);
+        var result = document.getElementById('resultDetail');
         // var result = document.querySelector("#result");
         var item = ''
         console.log(response);
+ 
+        item = "ID: " + response.id + " Name: " + response.name + " User-Name: " + response.username + " email: " + response.email + " phone: " + response.phone + " website: " + response.website
+        result.append(item);
         
-        result.innerHTML = "ID: " + response.id + " Name: " + response.name + " User-Name: " + element.username + " email: " + element.email + " phone: " + element.phone + " website: " + element.website
     })
 }
