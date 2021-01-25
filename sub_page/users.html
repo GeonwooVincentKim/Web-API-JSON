@@ -24,17 +24,17 @@
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
-                <a id="result" href="/sub_page/detail_info/detail_users.html">
+                <div id="result">
                 <!-- <a href="/sub_page/detail_info/detail_users.html/" id="result"> -->
                 <!-- <a href="/sub_page/users.html/1" id="result"> -->
                 <!-- <a href="javascript:request_user_detail('https://jsonplaceholder.typicode.com/users/{%users.id%}')" id="result"> -->
                     <script type="text/javascript">
                         /* request_user_detail("#resultDetail"); */
-                        // request_user("users"); 
+                        request_user("users"); 
                         /* var list = request_user("users"); */
                         
-                        var list = request_user("users");
-                        /*for(i = 0; i <= list.length; i++){
+                        /*var list = request_user("users");
+                        for(i = 0; i <= list.length; i++){
                             list.innerHTML =
                             "<li>"
                                 "<a href='/sub_page/detail_info/detail_users.html'>"
@@ -44,24 +44,26 @@
                             "</li>"
                         }
                                 console.log(list);
-                        document.getElementById("resultDetail").innerHTML = list;*/
-                        var lines = 
+                        document.getElementById("resultDetail").innerHTML = list;
+                        *//*var lines = 
                         `<li> \
                            <a href='/sub_page/detail_info/detail_users.html'> \
                                'ID: ' + ${list[i].id} + ' Name: ' + ${list[i].name} + ' User-Name: ' + ${list[i].username} + ' Email: ' + ${list[i].email} + ' Phone: ' + ${list[i].phone} + ' Website: ' + ${list[i].website} + '<br>' \
                            </a> \
                         </li>`;
-                        document.write(lines);
-                        //for(i = 0; i <= list.length; i++){
-                        //    document.write("<li>");
-                        //    document.write("<a href='/sub_page/detail_info/detail_users.html'>");
-                        //    document.write('ID: ' + list[i].id + ' Name: ' + list[i].name + ' User-Name: ' + list[i].username + ' Email: ' + list[i].email + ' Phone: ' + list[i].phone + ' Website: ' + list[i].website + '<br>');
-                        //    document.write("</a>");
-                        //    document.write("</li>");
-                        //}
+                        document.write(list);*/
+                        /*for(i = 0; i <= list.length; i++){
+                            document.write("<li>");
+                            document.write("<a href='/sub_page/detail_info/detail_users.html'>");
+                            document.write('ID: ' + list[i].id + ' Name: ' + list[i].name + ' User-Name: ' + list[i].username + ' Email: ' + list[i].email + ' Phone: ' + list[i].phone + ' Website: ' + list[i].website + '<br>');
+                            document.write("</a>");
+                            document.write("</li>");
+                        }*/
                         // document.write(list.id);
                     </script>
+                    
                 </ul>
+            </div>
             </div>
         </div>
     </div>

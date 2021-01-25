@@ -23,12 +23,19 @@
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
-                <a id="resultDetail" href="{$pk=request_user_detail('id')}">
+                <a id="resultDetail">
                 <!-- <a id="resultDetail" onclick="request_user_detail('result.id')"> -->
                 <!-- <a id="resultDetail" onclick="request_user_detail('result.id')"> -->
                 <!-- <a href="javascript:request_user_detail('^(?!0|1$)\d{1,4}$')" id="resultDetail"> -->
                     <script type="text/javascript" id="num">
-                        request_user_detail('1');
+                        var list = request_user_detail('1');
+                        for(i = 0; i <= list.length; i++){
+                            document.write("<li>");
+                            document.write("<a href='/sub_page/detail_info/detail_users.html'>");
+                            document.write('ID: ' + list[i].id + ' Name: ' + list[i].name + ' User-Name: ' + list[i].username + ' Email: ' + list[i].email + ' Phone: ' + list[i].phone + ' Website: ' + list[i].website + '<br>');
+                            document.write("</a>");
+                            document.write("</li>");
+                        }
                         /* request_user_detail("1"); */
                     </script>
                 </a>
