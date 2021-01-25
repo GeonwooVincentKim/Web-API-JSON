@@ -44,21 +44,21 @@ function request_user_detail(detail_num){
     }).then((response) => {
         console.log(response);
         
-        // let users = response.id;
-        // return users.map(function(user){
-        //     let div = createNode("div"),
-        //     a_href = createNode("a").attr("id");
-        //     // span = createNode("span");
-        //     a_href.innerHTML = `${user.id} ${user.name} ${user.email} ${user.phone} ${user.website}`;
+        let users = response.id;
+        return users.map(function(user){
+            let div = createNode("div"),
+            a_href = createNode("a").attr("id");
+            // span = createNode("span");
+            a_href.innerHTML = `${user.id} ${user.name} ${user.email} ${user.phone} ${user.website}`;
         
-        //     // append(a_href, span);
-        //     append(div, a_href);
-        //     append(div, div);
-        // })
-        var result = document.getElementById('resultDetail');
-        // var result = document.querySelector("#result");
-        var item = ''
-        console.log(response);
+            // append(a_href, span);
+            append(div, a_href);
+            append(div, div);
+        })
+        // var result = document.getElementById('resultDetail');
+        // // var result = document.querySelector("#result");
+        // var item = ''
+        // console.log(response);
         
         // response.foreach((element) => {
         //     // item = "ID: " + response.id + " Name: " + response.name + " User-Name: " + response.username + " email: " + response.email + " phone: " + response.phone + " website: " + response.website
@@ -67,8 +67,7 @@ function request_user_detail(detail_num){
         //     console.log(result);
         //     return result;
         // })
-        item = "ID: " + element.id + " Name: " + element.name + " User-Name: " + element.username + " email: " + element.email + " phone: " + element.phone + " website: " + element.website
-        result.append(item + "\n");
+        // return result;
     }).catch(function(error){
         console.log(JSON.stringify(error));
     })
