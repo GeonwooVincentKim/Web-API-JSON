@@ -22,7 +22,7 @@ function request_user(detail_dir){
 
 function request_user_detail(detail_num){
     console.log("Testing this..");
-    fetch("https://jsonplaceholder.typicode.com/users/" + detail_num, {method: "GET"})
+    fetch("https://jsonplaceholder.typicode.com/users/?<pk>(0-9)" + detail_num, {method: "GET"})
     .then(function(response){
         return response.json()
     }).then((response) => {
@@ -34,6 +34,6 @@ function request_user_detail(detail_num){
  
         item = "ID: " + response.id + " Name: " + response.name + " User-Name: " + response.username + " email: " + response.email + " phone: " + response.phone + " website: " + response.website
         result.append(item);
-        
+        return result;
     })
 }
