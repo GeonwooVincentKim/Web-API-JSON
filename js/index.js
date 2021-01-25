@@ -40,7 +40,7 @@ function request_all(detail_dir){
         //     item = 'User ID: ' + element.userId + ' ID: ' + element.id + " title: " + element.title + " - completed: " + element.completed + "<br><br>";
         //     console.log(item);
         //     result.append(item);
-        // }(element=>{
+        // }(element=>{ 
             
         //     console.log(item);
         //     result.append(item);
