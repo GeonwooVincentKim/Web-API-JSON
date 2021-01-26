@@ -12,21 +12,15 @@ function request_user(detail_dir){
         var item = ''
         var result = document.getElementById('result')
         console.log(response);
-        // for(i = 0; i <= response.length; i++){
-        //     item = "ID: " + response.id + " Name: " + response.name;
-        //     console.log(item);
-        //     result.append(item + "\n");
-        //     console.log(result);
-        //     return result;
-        // }
         response.forEach(element=>{
             item = 'ID: ' + element.id + ' Name: ' + element.name + " User-Name: " + element.username + " email: " + element.email + " phone: " + element.phone + " website: " + element.website
             console.log(item);
             var n = "\n";
+           // if(result.innerHTML == `<a href="/sub_page/detail_info/detail_users.html?id=${response[con].id}"`)
             result.innerHTML += `
               <div class="result_list">
                 <div class="list_body">
-                    <a href="/sub_page/detail_info/detail_users.html?id=" + ${element.id}>
+                    <a href="/sub_page/detail_info/detail_users.html?id=${response[con].id}">
                     ${response[con].id}
                     ${response[con].name}
                     ${response[con].username}
@@ -37,13 +31,12 @@ function request_user(detail_dir){
                 </div>
               </div>
             `
-            // con = 0;
             // result.append(item + "\n");
             con += 1;
 
             console.log(result);
-            // return result;
-            return response;
+            return result;
+            // return response;
         });
     })
 }
@@ -89,7 +82,7 @@ function request_user_detail(detail_num){
             console.log(result);
             return result;
         })
-        return result;
+        // return result;
     }).catch(function(error){
         console.log(JSON.stringify(error));
     })

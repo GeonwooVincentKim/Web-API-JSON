@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="/css/index.css">
     <script src="/js/sub_page/users.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 </head>
 <body>
     <div class="page-header">
@@ -27,12 +28,14 @@
                 <!-- <a id="resultDetail" onclick="request_user_detail('result.id')"> -->
                 <!-- <a id="resultDetail" onclick="request_user_detail('result.id')"> -->
                 <!-- <a href="javascript:request_user_detail('^(?!0|1$)\d{1,4}$')" id="resultDetail"> -->
-                    <script type="text/javascript" id="num" language="javascript">
-                        // temp = location.href.split("?");
-                        // data = temp[1].split("\n");
+                    <script type="text/javascript">
+                        var getId = $(con).attr("result");
+                        temp = location.href.split("?");
+                        data = temp[1].split("\n");
                         // response[con].id = data[0];
                     /* request_user_detail("1"); */
-                        alert(request_user.request_user);
+                        alert(getId);
+                        request_user("users");
                     </script>
                 </a>
             </div>
