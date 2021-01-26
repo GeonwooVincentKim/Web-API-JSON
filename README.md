@@ -16,7 +16,6 @@ This is the simple `Web-Site` that gets the data by `API` and make it `JSON`.
 
 `git rebase --abort`
 
-
 ## When you can't push your `Project` to your `Github-Account`
 
 ### How to solve `Fatal: refusing to merge unrelated histories`
