@@ -1,11 +1,16 @@
+var con = 0;
+var result = document.getElementById('result')
+// var btn = document.getElementById("btn").addEventListener("click", getPost);
+
 function request_user(detail_dir){
     console.log("Testing..");
     fetch("https://jsonplaceholder.typicode.com/" + detail_dir)
     .then(function(response){
         return response.json()
     }).then((response) => {
-        var result = document.getElementById('result')
+        // var button = document.getElementById("btn").addEventListener('')
         var item = ''
+        var result = document.getElementById('result')
         console.log(response);
         // for(i = 0; i <= response.length; i++){
         //     item = "ID: " + response.id + " Name: " + response.name;
@@ -18,10 +23,27 @@ function request_user(detail_dir){
             item = 'ID: ' + element.id + ' Name: ' + element.name + " User-Name: " + element.username + " email: " + element.email + " phone: " + element.phone + " website: " + element.website
             console.log(item);
             var n = "\n";
-            result.append(item + "\n");
+            result.innerHTML += `
+              <div class="result_list">
+                <div class="list_body">
+                    <a href="/sub_page/detail_info/detail_users.html?id=" + ${element.id}>
+                    ${response[con].id}
+                    ${response[con].name}
+                    ${response[con].username}
+                    ${response[con].email}
+                    ${response[con].phone}
+                    ${response[con].website}
+                    </a>
+                </div>
+              </div>
+            `
+            // con = 0;
+            // result.append(item + "\n");
+            con += 1;
 
             console.log(result);
-            return result;
+            // return result;
+            return response;
         });
     })
 }
