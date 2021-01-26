@@ -24,7 +24,7 @@ function request_comments(detail_dir){
         // });
         response.forEach(element=>{
             item = 'Post ID: ' + element.postId + ' ID: ' + element.id + " name: " + element.title + " email: " + element.email + " body: " + element.body
-            console.log(item);
+            console.log(item); 
             var n = "\n";
             result.append(item + "\n");
         });
