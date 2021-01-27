@@ -108,6 +108,7 @@ function findGetUser(detail_info){
                 console.log(tmp[0]);
                 console.log(tmp[1]);
             }
+            
             // result.innerHTML = `
             //     <div class="result_list">
             //         <p class="list_body">
@@ -126,12 +127,39 @@ function findGetUser(detail_info){
     // const searchFindValue = response.find((element, item, array)=>{
     //     return item.id == response.id;
     // });
-    console.log(result + "중간");
+    // console.log(result + "중간");
+    // result.innerHTML = `
+    //     <div class="result_list_detail">
+    //     <p class="detail_list_body">
+    //         "ID: " + ${result.id}
+    //         " Name: " + ${result.name}
+    //         " User-Name: " + ${result.username}
+    //         " email: " + ${result.email}
+    //         " phone: " + ${result.phone} 
+    //         " website: " + ${result.website}
+    //     </p>
+    //     </div>
+    // `
+    // return result;
     fetch("https://jsonplaceholder.typicode.com/users?id=" + result)
     .then(function(response){
         return response.json()
     }).then((response) => {
+        result = document.getElementById('result');
         console.log(response);
+        console.log(result);
+        result.innerHTML = `
+            <div class="result_list_detail">
+                <p class="detail_list_body">
+                    "ID: " + ${tmp[1]}
+                    " Name: " + ${tmp}
+                    " User-Name: " + ${response.username}
+                    " email: " + ${response.email}
+                    " phone: " + ${response.phone} 
+                    " website: " + ${response.website}
+                </p>
+            </div>
+        `;
         
         // var findValue = response.findIndex(
         //     location.search
@@ -192,7 +220,7 @@ function findGetUser(detail_info){
             //     });
             // })
             // var result = document.querySelector("#result");
-        
+        return tmp[1];
     })
-    return result;
+    // return result;
 }
