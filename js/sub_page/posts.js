@@ -1,6 +1,6 @@
 var post_con = 0;
-var result = document.getElementById('result_post')
 
+// var result = document.getElementById('result_post')
 function request_post(detail_dir){
     console.log("Testing..");
     fetch("https://jsonplaceholder.typicode.com/" + detail_dir)
@@ -76,7 +76,7 @@ function request_post_detail(detail_info){
             result.innerHTML += `
                 <div class="result_list_detail">
                     <p class="detail_list_body">
-                        ID: ${element.userId}
+                        ID: ${response[post_con].userId}
                         Name: ${element.id}
                         Title: ${element.title}
                         Body: ${element.body}
@@ -120,7 +120,7 @@ function request_post_detail(detail_info){
         return result, result2;
     })
 
-    fetch("https://jsonplaceholder.typicode.com/posts?id=${result}/comments")
+    fetch("https://jsonplaceholder.typicode.com/posts?id=" + result + "/comments")
     .then(function(response){
         return response.json()
     }).then((response) => {
