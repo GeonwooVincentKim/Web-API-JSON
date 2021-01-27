@@ -24,19 +24,11 @@
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
-                <div id="resultDetail">
-                <!-- <a id="resultDetail" onclick="request_user_detail('result.id')"> -->
-                <!-- <a id="resultDetail" onclick="request_user_detail('result.id')"> -->
-                <!-- <a href="javascript:request_user_detail('^(?!0|1$)\d{1,4}$')" id="resultDetail"> -->
+                <div id="result_post_detail">
                     <script type="text/javascript">
-                        var getId = $(post_con).attr("result");
-                        temp = location.href.split("?");
-                        data = temp[1].split("\n");
-                        // response[con].id = data[0];
-                    /* request_user_detail("1"); */
-                        alert(getId);
-                        request_post_detail({post_con});
+                        request_post_detail("id");
                         // request_post("posts");
+                        // findGetPost("id");
                     </script>
                 </a>
             </div>

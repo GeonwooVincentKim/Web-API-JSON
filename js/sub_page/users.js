@@ -51,44 +51,7 @@ function append(parent, el){
     return parent.appendChild(el);
 }
 
-function request_user_detail(detail_num){
-    console.log("Testing this..");
-    fetch("https://jsonplaceholder.typicode.com/users/" + detail_num, {method: "GET"})
-    .then(function(response){
-        return response.json()
-    }).then((response) => {
-        console.log(response);
-        
-        // let users = response.id;
-        // return users.map(function(user){
-        //     let div = createNode("div"),
-        //     a_href = createNode("a").attr("id");
-        //     // span = createNode("span");
-        //     a_href.innerHTML = `${user.id} ${user.name} ${user.email} ${user.phone} ${user.website}`;
-        
-        //     // append(a_href, span);
-        //     append(div, a_href);
-        //     append(div, div);
-        // })
-        var result = document.getElementById('resultDetail');
-        // var result = document.querySelector("#result");
-        var item = ''
-        console.log(response);
-        
-        response.foreach((element) => {
-            // item = "ID: " + response.id + " Name: " + response.name + " User-Name: " + response.username + " email: " + response.email + " phone: " + response.phone + " website: " + response.website
-            item = "ID: " + element.id + " Name: " + element.name + " User-Name: " + element.username + " email: " + element.email + " phone: " + element.phone + " website: " + element.website
-            result.append(item + "\n");
-            console.log(result);
-            return result;
-        })
-        // return result;
-    }).catch(function(error){
-        console.log(JSON.stringify(error));
-    })
-}
-
-function findGetUser(detail_info){
+function request_user_detail(detail_info){
     var result = null, tmp = [];
     location.search
         .substr(1)
@@ -106,7 +69,7 @@ function findGetUser(detail_info){
     .then(function(response){
         return response.json()
     }).then((response) => {
-        result = document.getElementById('result');
+        result = document.getElementById('result_user');
         console.log(response);
         console.log(result);
         response.forEach(element => {
@@ -114,17 +77,16 @@ function findGetUser(detail_info){
             result.innerHTML = `
                 <div class="result_list_detail">
                     <p class="detail_list_body">
-                        "ID: " + ${element.id}
-                        " Name: " + ${element.name}
-                        " User-Name: " + ${element.username}
-                        " email: " + ${element.email}
-                        " phone: " + ${element.phone} 
-                        " website: " + ${element.website}
+                        ID: ${element.id}<br> 
+                        Name: ${element.name}<br>
+                        User-Name: ${element.username}<br>
+                        email: ${element.email}<br>
+                        phone: ${element.phone}<br>
+                        website: ${element.website}
                     </p>
                 </div>
             `;
         })
         return result;
     })
-    // return result;
 }
