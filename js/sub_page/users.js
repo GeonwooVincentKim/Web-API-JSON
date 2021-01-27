@@ -96,8 +96,38 @@ function request_user_detail(detail_num){
 }
 
 function findGetUser(detail_info){
-    var result = null,
-        tmp = [];
+    var result = null, tmp = [];
+    // fetch("https://jsonplaceholder.typicode.com/users?id=" + result)
+    // .then(function(response){
+    //     return response.json()
+    // }).then((response) => {
+    //     location.search
+    //         .substr(1)
+    //         .split("&")
+    //         .forEach(function(item){
+    //             tmp = item.split("=");
+    //             if(tmp[0] === detail_info){
+    //                 result = decodeURIComponent(tmp[1]);
+    //                 console.log(tmp[0]);
+    //                 console.log(tmp[1]);
+    //             }
+    //         });
+    //     result = document.getElementById("result");
+    //     console.log(result);
+    //     console.log(response);
+    //     result.innerHTML = `
+    //         <div class="result_list_detail">
+    //             <p class="detail_list_body">
+    //                 "ID: " + ${tmp[1]}
+    //                 " Name: " + ${tmp[1].name}
+    //                 " User-Name: " + ${tmp.username}
+    //                 " email: " + ${response.email}
+    //                 " phone: " + ${response.phone} 
+    //                 " website: " + ${response.website}
+    //             </p>
+    //         </div>
+    //     `;
+    // })
     location.search
         .substr(1)
         .split("&")
@@ -148,18 +178,22 @@ function findGetUser(detail_info){
         result = document.getElementById('result');
         console.log(response);
         console.log(result);
-        result.innerHTML = `
-            <div class="result_list_detail">
-                <p class="detail_list_body">
-                    "ID: " + ${tmp[1]}
-                    " Name: " + ${tmp}
-                    " User-Name: " + ${response.username}
-                    " email: " + ${response.email}
-                    " phone: " + ${response.phone} 
-                    " website: " + ${response.website}
-                </p>
-            </div>
-        `;
+        response.forEach(element => {
+            item = 'ID: ' + element.id + ' Name: ' + element.name + " User-Name: " + element.username + " email: " + element.email + " phone: " + element.phone + " website: " + element.website;
+            result.innerHTML = `
+                <div class="result_list_detail">
+                    <p class="detail_list_body">
+                        "ID: " + ${element.id}
+                        " Name: " + ${element.name}
+                        " User-Name: " + ${element.username}
+                        " email: " + ${element.email}
+                        " phone: " + ${element.phone} 
+                        " website: " + ${element.website}
+                    </p>
+                </div>
+            `;
+        })
+        
         
         // var findValue = response.findIndex(
         //     location.search
@@ -220,7 +254,7 @@ function findGetUser(detail_info){
             //     });
             // })
             // var result = document.querySelector("#result");
-        return tmp[1];
+        return result;
     })
-    // return result;
+    return result;
 }
