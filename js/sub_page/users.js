@@ -1,5 +1,3 @@
-var con = 0;
-
 function request_user(detail_dir){
     console.log("Testing..");
     fetch("https://jsonplaceholder.typicode.com/" + detail_dir)
@@ -34,18 +32,18 @@ function request_user(detail_dir){
             result.innerHTML += `
             <div class="result_list">
                 <div class="list_body">
-                    <a href="https://jsonplaceholder.typicode.com/users/${element.id}">
+                <a href="/sub_page/detail_info/detail_users.html?id=${element.id}">
+                <!--<a href="https://jsonplaceholder.typicode.com/users/${element.id}">-->
                     "ID: " + ${element.id}
                     " Name: " + ${element.name}
                     " User-Name: " + ${element.username}
                     " email: " + ${element.email}
-                    " phone: " + ${element.phone} 
+                    " phone: " + ${element.phone}
                     " website: " + ${element.website}
                     </a>
                 </div>
             </div>
             `
-            con += 1;
             // result.append(item + "\n");
 
             console.log(result);
@@ -56,7 +54,7 @@ function request_user(detail_dir){
 
 function request_user_detail(detail_num){
     console.log("Testing this..");
-    fetch("https://jsonplaceholder.typicode.com/users/" + detail_num, {method: "GET"})
+    fetch("https://jsonplaceholder.typicode.com/users?id=" + detail_num, {method: "GET"})
     .then(function(response){
         return response.json()
     }).then((response) => {
@@ -95,4 +93,106 @@ function request_user_detail(detail_num){
         //     </a>
         // `
     })
+}
+
+function findGetUser(detail_info){
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function(item){
+            tmp = item.split("=");
+            if(tmp[0] === detail_info) {
+                result = decodeURIComponent(tmp[1]);
+                console.log(tmp[0]);
+                console.log(tmp[1]);
+            }
+            // result.innerHTML = `
+            //     <div class="result_list">
+            //         <p class="list_body">
+            //             "ID: " + ${item.id}
+            //             " Name: " + ${item.name}
+            //             " User-Name: " + ${item.username}
+            //             " email: " + ${item.email}
+            //             " phone: " + ${item.phone} 
+            //             " website: " + ${item.website}
+            //         </p>
+            //     </div>
+            // `
+            // console.log(result);
+            // return result;
+        });
+    // const searchFindValue = response.find((element, item, array)=>{
+    //     return item.id == response.id;
+    // });
+    console.log(result + "중간");
+    fetch("https://jsonplaceholder.typicode.com/users?id=" + result)
+    .then(function(response){
+        return response.json()
+    }).then((response) => {
+        console.log(response);
+        
+        // var findValue = response.findIndex(
+        //     location.search
+        //     .substr(1)
+        //     .split("&")
+        //     .forEach(function(item){
+        //         tmp = item.split("=");
+        //         if(tmp[0] === detail_info) return result = decodeURIComponent(tmp[1])
+        // })
+        // .findValue.forEach(element=>{
+        //     result.innerHTML = `
+        //         <div class="result_list">
+        //             <p class="list_body">
+        //                 "ID: " + ${element.id}
+        //                 " Name: " + ${element.name}
+        //                 " User-Name: " + ${element.username}
+        //                 " email: " + ${element.email}
+        //                 " phone: " + ${element.phone} 
+        //                 " website: " + ${element.website}
+        //             </p>
+        //         </div>
+        //     `
+        // }),
+        // var a = response.findIndex(function(item){
+            
+        //     return item.id == result.id;
+        // });
+        
+        // console.log(searchFindValue);
+        // console.log(response);
+        // var result = null,
+        //     tmp = [];
+        // location.search
+        //     .substr(1)
+        //     .split("&")
+            
+
+       
+            // .then(function(response){
+            //     return response.json()
+            // }).then((response) => {
+
+            //     res[p].forEach(function(item){
+            //         tmp = item.split("=");
+            //         if(tmp[0] === detail_info) result = decodeURIComponent(tmp[1]);
+            //         result.innerHTML = `
+            //             <div class="result_list">
+            //                 <div class="list_body">
+            //                     "ID: " + ${item.id}
+            //                     " Name: " + ${item.name}
+            //                     " User-Name: " + ${item.username}
+            //                     " email: " + ${item.email}
+            //                     " phone: " + ${item.phone} 
+            //                     " website: " + ${item.website}
+            //                 </div>
+            //             </div>
+            //         `
+            //     });
+            // })
+            // var result = document.querySelector("#result");
+        
+    })
+    return result;
 }
