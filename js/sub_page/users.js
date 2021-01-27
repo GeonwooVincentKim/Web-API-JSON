@@ -87,3 +87,44 @@ function request_user_detail(detail_num){
         console.log(JSON.stringify(error));
     })
 }
+
+function findGetUser(detail_info){
+    var result = null, tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function(item){
+            tmp = item.split("=");
+            if(tmp[0] === detail_info) {
+                result = decodeURIComponent(tmp[1]);
+                console.log(tmp[0]);
+                console.log(tmp[1]);
+            }
+        });
+
+    fetch("https://jsonplaceholder.typicode.com/users?id=" + result)
+    .then(function(response){
+        return response.json()
+    }).then((response) => {
+        result = document.getElementById('result');
+        console.log(response);
+        console.log(result);
+        response.forEach(element => {
+            item = 'ID: ' + element.id + ' Name: ' + element.name + " User-Name: " + element.username + " email: " + element.email + " phone: " + element.phone + " website: " + element.website;
+            result.innerHTML = `
+                <div class="result_list_detail">
+                    <p class="detail_list_body">
+                        "ID: " + ${element.id}
+                        " Name: " + ${element.name}
+                        " User-Name: " + ${element.username}
+                        " email: " + ${element.email}
+                        " phone: " + ${element.phone} 
+                        " website: " + ${element.website}
+                    </p>
+                </div>
+            `;
+        })
+        return result;
+    })
+    // return result;
+}

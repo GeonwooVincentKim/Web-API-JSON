@@ -29,13 +29,7 @@
                 <!-- <a id="resultDetail" onclick="request_user_detail('result.id')"> -->
                 <!-- <a href="javascript:request_user_detail('^(?!0|1$)\d{1,4}$')" id="resultDetail"> -->
                     <script type="text/javascript">
-                        var getId = $(con).attr("result");
-                        temp = location.href.split("?");
-                        data = temp[1].split("\n");
-                        // response[con].id = data[0];
-                    /* request_user_detail("1"); */
-                        alert(getId);
-                        request_user("users");
+                        findGetUser("id");
                     </script>
                 </a>
             </div>
