@@ -69,16 +69,14 @@ function request_post_detail(detail_info){
             result.innerHTML += `
                 <div class="result_list_detail">
                     <p class="detail_list_body">
-                        User ID: ${response[post_con].userId}
+                        User ID: ${element.userId}
                         ID: ${element.id}
                         Title: ${element.title}
                         Body: ${element.body}
                     </p>
                 </div>
             `;
-            post_con += 1;
         })
-        return result, result2;
     })
 
     fetch("https://jsonplaceholder.typicode.com/comments?postId=" + result)
@@ -108,7 +106,7 @@ function request_post_detail(detail_info){
             post_con += 1;
             console.log(result.id);
             console.log(result);
-            return result;
         });
     })
+    return result;
 }
