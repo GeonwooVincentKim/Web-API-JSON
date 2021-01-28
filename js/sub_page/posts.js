@@ -108,6 +108,7 @@ function request_post_detail(detail_info){
 }
 
 function add_new_post(new_post){
+    var results = document.getElementById('result_post')
     var form = document.getElementById("form");
     form.addEventListener("submit", function(e){
         e.preventDefault()
@@ -128,7 +129,22 @@ function add_new_post(new_post){
                 'Content-type': 'application/json; charset=UTF-8'
             }
         })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
+        .then(function(response){
+            return response.json()
+        }).then(function(data) {
+            console.log(data);
+            results.innerHTML += `
+                <div class="result_list_detail">
+                    <p class="detail_list_body">
+                        <a href="/sub_page/detail_info/detail_posts.html?id=${data.id}">
+                            ${data.userId}
+                            ${data.id}
+                            ${data.title}
+                            ${data.body}
+                        </a>
+                    </p>
+                </div>
+            `
+        });
     })
 }

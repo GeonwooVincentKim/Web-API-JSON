@@ -6,7 +6,7 @@
     <title>Posts</title>
 
     <link rel="stylesheet" href="/css/index.css">
-    <script src="/js/sub_page/posts.js" type="text/javascript">request();</script>
+    <script src="/js/sub_page/posts.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 </head>
 <body>
@@ -20,20 +20,22 @@
                 </button>
             </span>
         </a>
-        <a href="add_new/add_post.html" class="top-menu">
-            <span class="menu_list">
-                <button onclick="" class="btn-posts">
-                    Move to Add-Post-Page
-                </button>
-            </span>
-        </a>
     </div>
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
+                <form id="form" method="POST" action="../posts.html">
+                    <input type="text" id="userId" placeholder="userId"/>
+                    <!-- <input type="text" id="id" placeholder="id"/> -->
+                    <input type="text" id="title" placeholder="title"/>
+                    <input type="text" id="body" placeholder="body"/>
+                    <!-- <input type="hidden" name="csrf-token" value="CIwNZNlR4XbisJF39I8yWnWX9wX4WFoz" /> -->
+                    <input type="submit" value="Add New Post"/>
+                </form>
                 <div id="result_post">
                     <script type="text/javascript">
                         request_post("posts");
+                        add_new_post("posts");
                     </script>
                 </div>
             </div>
