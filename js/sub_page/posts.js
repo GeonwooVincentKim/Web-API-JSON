@@ -61,7 +61,7 @@ function request_post_detail(detail_info){
             //     console.log(tmp[2]);
             // }
         });
-
+    // var result2 = result;
     fetch("https://jsonplaceholder.typicode.com/posts?id=" + result)
     .then(function(response){
         return response.json()
@@ -73,16 +73,43 @@ function request_post_detail(detail_info){
             console.log(item);
             var n = "\n";
             // result.append(item + "\n");
+
+            // fetch("https://jsonplaceholder.typicode.com/comments?postId=" + result2)
+            // .then(function(response){
+            //     return response.json()
+            // }).then((response) => {
+            //     result2 = document.getElementById("result_post_comment")
+            //     console.log(response);
+            //     response.forEach(element=>{
+            //         item2 = 'Post ID: ' + element.postId + 'ID: ' + element.id + "name: " + element.name + "email: " + element.email + "body: " + element.body
+            //     })
+            //     result2.innerHTML += `
+            //         <div class="comment_list_detail">
+            //             <p class="comment_body">
+            //                 Post ID: ${elememt.postId}
+            //                 ID: ${element.id}
+            //                 Name: ${element.Name}
+            //                 E-Mail: ${element.email}
+            //                 Body: ${element.body}
+            //             </p>
+            //         </div>
+            //     `
+            //     return result2;
+            // })
+
             result.innerHTML += `
                 <div class="result_list_detail">
                     <p class="detail_list_body">
-                        ID: ${response[post_con].userId}
-                        Name: ${element.id}
+                        User ID: ${response[post_con].userId}
+                        ID: ${element.id}
                         Title: ${element.title}
                         Body: ${element.body}
                     </p>
                 </div>
+
+                
             `;
+            
             // result2.innerHTML += `
             //     <div class="result_list_post">
             //         <div class="list_body">
@@ -120,7 +147,7 @@ function request_post_detail(detail_info){
         return result, result2;
     })
 
-    fetch("https://jsonplaceholder.typicode.com/posts?id=" + result + "/comments")
+    fetch("https://jsonplaceholder.typicode.com/comments?postId=" + result)
     .then(function(response){
         return response.json()
     }).then((response) => {
@@ -150,15 +177,6 @@ function request_post_detail(detail_info){
             var n = "\n";
             // result.append(item + "\n");
             result.innerHTML += `
-                <div class="result_list_detail">
-                        <p class="detail_list_body">
-                            ID: ${element.userId}
-                            Name: ${element.id}
-                            Title: ${element.title}
-                            Body: ${element.body}
-                        </p>
-                </div>
-                <p>tset</p>
                 <div class="result_comments_list">
                     <p class="comments_list_body">
                         ${response[post_con].postId}
