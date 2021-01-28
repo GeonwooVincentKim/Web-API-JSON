@@ -10,21 +10,7 @@ function request_comments(detail_dir){
         var result = document.getElementById('result')
         var item = ''
         console.log(response);
-        // response.for (index = 0; index < array.length, index++) {
-        //     element = array[index];
-        //     item = 'User ID: ' + element.userId + ' ID: ' + element.id + " title: " + element.title + " - completed: " + element.completed + "<br><br>";
-        //     console.log(item);
-        //     result.append(item);
-        // }(element=>{
-            
-        //     console.log(item);
-        //     result.append(item);
-        // });
-        // response.forEach(element =>{
-        //     item = 'User ID: ' + element.userId + ' ID: ' + element.id + "\n"
-        //     console.log(item);
-        //     result.append(item);
-        // });
+
         response.forEach(element=>{
             item = 'Post ID: ' + element.postId + ' ID: ' + element.id + " name: " + element.title + " email: " + element.email + " body: " + element.body
             console.log(item); 
