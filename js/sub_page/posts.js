@@ -29,7 +29,7 @@ function request_post(detail_dir){
 }
 
 function request_post_detail(detail_info){
-    var result = null, result2 = null, tmp = [];
+    var result = null, tmp = [];
     // var items = location.search.substr(1).split("&");
     // for (var index = 0; index < items.length; index++){
     //     tmp = items[index].split("=");
@@ -39,7 +39,7 @@ function request_post_detail(detail_info){
     //         console.log(tmp[1]);
     //     }
     // }
-    
+
     /* Display sub-directory */
     location.search
         .substr(1)
@@ -74,6 +74,7 @@ function request_post_detail(detail_info){
                 </div>
             `;
         })
+        return result;
     })
 
     fetch("https://jsonplaceholder.typicode.com/comments?postId=" + result)
@@ -81,7 +82,6 @@ function request_post_detail(detail_info){
         return response.json()
     }).then((response) => {
         result = document.getElementById('result_post_comment')
-        console.log(response[post_con] + "dddf");
 
         response.forEach(element=>{
             console.log(element.email + "yourmeail");
@@ -90,7 +90,7 @@ function request_post_detail(detail_info){
             console.log(element.email);
 
             result.innerHTML += `
-                <div class="result_comments_list">
+                <div class="result_list_detail">
                     <p class="comments_list_body">
                         ${element.postId}
                         ${element.id}
@@ -103,6 +103,32 @@ function request_post_detail(detail_info){
             console.log(result.id);
             console.log(result);
         });
+        return result;
     })
-    return result;
+}
+
+function add_new_post(new_post){
+    var form = document.getElementById("form");
+    form.addEventListener("submit", function(e){
+        e.preventDefault()
+        var postID = document.getElementById("userId").value;
+        // var ID = document.getElementById("id").value;
+        var title = document.getElementById("title").value;
+        var body = document.getElementById("body").value;
+
+        fetch("https://jsonplaceholder.typicode.com/" + new_post, {
+            method: "POST",
+            body: JSON.stringify({
+                userId: postID,
+                // id: ID,
+                title: title,
+                body: body
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+            }
+        })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+    })
 }

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Posts</title>
+    <title>Document</title>
 
     <link rel="stylesheet" href="/css/index.css">
-    <script src="/js/sub_page/posts.js" type="text/javascript">request();</script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="/js/sub_page/posts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 </head>
 <body>
     <div class="page-header">
@@ -20,24 +20,22 @@
                 </button>
             </span>
         </a>
-        <a href="add_new/add_post.html" class="top-menu">
-            <span class="menu_list">
-                <button onclick="" class="btn-posts">
-                    Move to Add-Post-Page
-                </button>
-            </span>
-        </a>
     </div>
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
-                <div id="result_post">
-                    <script type="text/javascript">
-                        request_post("posts");
-                    </script>
-                </div>
+                <form id="form" method="POST">
+                    <input type="text" id="userId" placeholder="userId"/>
+                    <!-- <input type="text" id="id" placeholder="id"/> -->
+                    <input type="text" id="title" placeholder="title"/>
+                    <input type="text" id="body" placeholder="body"/>
+                    <input type="submit" value="Add New Post"/>
+                </form>
             </div>
         </div>
     </div>
 </body>
+<script type="text/javascript">
+    add_new_post("posts")
+</script>
 </html>
