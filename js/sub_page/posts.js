@@ -1,5 +1,3 @@
-var post_con = 0;
-
 function request_post(detail_dir){
     console.log("Testing..");
     fetch("https://jsonplaceholder.typicode.com/" + detail_dir)
@@ -15,16 +13,15 @@ function request_post(detail_dir){
             result.innerHTML += `
                 <div class="result_list">
                     <div class="list_body">
-                        <a href="/sub_page/detail_info/detail_posts.html?id=${response[post_con].id}">
-                            ${response[post_con].userId}
-                            ${response[post_con].id}
-                            ${response[post_con].title}
-                            ${response[post_con].body}
+                        <a href="/sub_page/detail_info/detail_posts.html?id=${element.id}">
+                            ${element.userId}
+                            ${element.id}
+                            ${element.title}
+                            ${element.body}
                         </a>
                     </div>
                 </div>
             `
-            post_con += 1;
             console.log(result);
             return result;
         });
@@ -89,21 +86,20 @@ function request_post_detail(detail_info){
         response.forEach(element=>{
             console.log(element.email + "yourmeail");
             item = 'Post ID: ' + element.postId + ' ID: ' + element.id + " name: " + element.title + " email: " + element.email + " body: " + element.body
-            console.log(item); 
+            console.log(item);
             console.log(element.email);
 
             result.innerHTML += `
                 <div class="result_comments_list">
                     <p class="comments_list_body">
-                        ${response[post_con].postId}
-                        ${response[post_con].id}
-                        ${response[post_con].name}
-                        ${response[post_con].email}
-                        ${response[post_con].body}
+                        ${element.postId}
+                        ${element.id}
+                        ${element.name}
+                        ${element.email}
+                        ${element.body}
                     </p>
                 </div>
             `
-            post_con += 1;
             console.log(result.id);
             console.log(result);
         });
